@@ -1,0 +1,31 @@
+:root {
+    --font-family-mont: 'Mont', sans-serif;
+
+    --font-weight-xs: 300;
+    --font-weight-sm: 400;
+    --font-weight-md: 600;
+    --font-weight-lg: 700;
+    --font-weight-xl: 800;
+    --font-weight-xxl: 900;
+
+    --font-size-sm: 12px;
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+
+    --border-width-sm: 2px;
+    --border-width-md: 3px;
+    --border-width-lg: 4px;
+
+    --border-radius-sm: 3px;
+    --border-radius-md: 6px;
+    --border-radius-lg: 10px;
+    --border-radius-circle: 50%;
+
+    --spacing-none: 0;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+
+    --box-sizing-base: border-box;
+}

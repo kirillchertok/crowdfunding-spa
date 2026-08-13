@@ -1,0 +1,32 @@
+@import './variables.css';
+
+* {
+    box-sizing: var(--box-sizing-base);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+    font-family: var(--font-family-mont);
+    font-weight: var(--font-weight-md);
+}
+*,
+*:before,
+*:after {
+    box-sizing: var(--box-sizing-base);
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+img {
+    user-select: none;
+}
+
+html {
+    font-size: var(--font-size-md);
+}
