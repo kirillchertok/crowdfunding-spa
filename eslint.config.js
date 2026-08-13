@@ -4,6 +4,8 @@ const globals = require('globals');
 const reactPlugin = require('eslint-plugin-react');
 const reactHooksPlugin = require('eslint-plugin-react-hooks');
 const jsxA11yPlugin = require('eslint-plugin-jsx-a11y');
+const simpleImportSort = require('eslint-plugin-simple-import-sort');
+const reactRefresh = require('eslint-plugin-react-refresh');
 
 module.exports = [
     {
@@ -33,7 +35,9 @@ module.exports = [
         plugins: {
             react: reactPlugin,
             'react-hooks': reactHooksPlugin,
+            'react-refresh': reactRefresh,
             'jsx-a11y': jsxA11yPlugin,
+            'simple-import-sort': simpleImportSort,
         },
 
         settings: {
@@ -47,6 +51,9 @@ module.exports = [
             ...reactPlugin.configs['jsx-runtime'].rules,
             ...reactHooksPlugin.configs.recommended.rules,
             ...jsxA11yPlugin.configs.recommended.rules,
+
+            'simple-import-sort/imports': 'error',
+            'simple-import-sort/exports': 'error',
 
             'react/prop-types': 'off',
 

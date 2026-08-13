@@ -1,7 +1,9 @@
 import '@/styles/global.css';
 import '@/styles/variables.css';
+
 import { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
 import { ROUTES } from '@/constants/routes';
 
 const App = () => {

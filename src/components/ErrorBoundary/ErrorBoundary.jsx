@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ErrorBoundary.css';
+import { styles } from './ErrorBoundary.css';
 
 export default class ErrorBoundary extends React.Component {
     constructor(props) {
@@ -20,11 +20,11 @@ export default class ErrorBoundary extends React.Component {
 
         if (hasError && error) {
             return (
-                <div className={'error-boundary'}>
+                <div className={styles.error_boundary}>
                     <h1>Something gone wrong</h1>
-                    <details className={'error-boundary__message'}>
+                    <details className={styles.error_boundary__message}>
                         <summary>Error information</summary>
-                        <pre className={'error-boundary__error-text'}>{error.message}</pre>
+                        <pre className={styles.error_boundary__error_text}>{error.message}</pre>
                     </details>
                 </div>
             );
