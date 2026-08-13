@@ -86,7 +86,9 @@ module.exports = (env, argv) => {
                 systemvars: true,
             }),
 
-            new BundleAnalyzerPlugin(),
+            new BundleAnalyzerPlugin({
+                analyzerMode: 'static',
+            }),
 
             ...(isProduction
                 ? [
