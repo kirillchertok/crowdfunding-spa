@@ -24,7 +24,7 @@
     overflow: hidden;
 }
 
-.error_boundary__error-text {
+.error_boundary__error_text {
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;

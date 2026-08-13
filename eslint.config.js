@@ -23,6 +23,7 @@ module.exports = [
 
             globals: {
                 ...globals.browser,
+                ...globals.node,
             },
 
             parserOptions: {
