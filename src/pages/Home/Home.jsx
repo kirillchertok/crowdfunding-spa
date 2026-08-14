@@ -1,8 +1,10 @@
+import { Layout } from '@/components/ui/Layout/Layout';
+
 const Home = () => {
     return (
-        <div>
+        <Layout type='rice-flower'>
             <div>asd</div>
-        </div>
+        </Layout>
     );
 };
 

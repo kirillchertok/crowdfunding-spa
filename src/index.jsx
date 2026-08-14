@@ -1,3 +1,6 @@
+import '@/styles/global.css';
+import '@/styles/variables.css';
+
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
@@ -27,4 +30,3 @@ root.render(
         </BrowserRouter>
     </StrictMode>
 );
-
