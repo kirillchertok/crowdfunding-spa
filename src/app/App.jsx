@@ -1,8 +1,25 @@
 import '@/styles/global.css';
 import '@/styles/variables.css';
 
+import { Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
+import { ROUTES } from '@/constants/routes';
+
 const App = () => {
-    return <div></div>;
+    return (
+        <Suspense fallback={'loading'}>
+            <Routes>
+                {ROUTES.map(({ path, element }) => (
+                    <Route
+                        key={path}
+                        path={path}
+                        element={element}
+                    />
+                ))}
+            </Routes>
+        </Suspense>
+    );
 };
 
 export default App;

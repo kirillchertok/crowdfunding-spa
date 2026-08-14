@@ -29,3 +29,9 @@
 
     --box-sizing-base: border-box;
 }
+
+:root {
+    --background-color-white: rgba(255, 255, 255, 1);
+    --background-color-darker-white: rgba(245, 245, 245, 1);
+    --font-color-error: rgba(255, 0, 0, 1);
+}
