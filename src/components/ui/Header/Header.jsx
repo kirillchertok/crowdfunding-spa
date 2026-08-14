@@ -1,10 +1,6 @@
-import classNames from 'classnames';
-import { Link, useLocation } from 'react-router-dom';
-
 import profilePicture from '@/assets/images/profile-picture-tmp.jpg';
 import { Nav } from '@/components/ui/Nav/Nav';
 import { shoppingBarIcon } from '@/constants/icons';
-import { ROUTES } from '@/constants/routes';
 
 import * as styles from './Header.module.css';
 
