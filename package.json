@@ -13,9 +13,11 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.12.0",
     "classnames": "^2.5.1",
+    "leaflet": "^1.9.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-icons": "^5.7.0",
+    "react-leaflet": "^5.0.0",
     "react-redux": "^9.3.0",
     "react-router-dom": "^7.18.2",
     "redux-persist": "^6.0.0"
@@ -28,6 +30,7 @@
     "@commitlint/config-conventional": "^21.2.0",
     "@eslint/js": "^9.39.5",
     "babel-loader": "^10.1.1",
+    "babel-plugin-react-compiler": "^1.0.0",
     "css-loader": "^7.1.4",
     "css-minimizer-webpack-plugin": "^8.0.0",
     "dotenv-webpack": "^9.0.0",

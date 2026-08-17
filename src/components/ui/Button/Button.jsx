@@ -7,6 +7,7 @@ import * as styles from './Button.module.css';
 export const Button = ({
     option = BUTTON_OPTIONS.FIRST,
     size = BUTTON_SIZE.MEDIUM,
+    className,
     children,
     ...attrs
 }) => {
@@ -15,7 +16,8 @@ export const Button = ({
             className={classNames(
                 styles.button,
                 styles[`button--${option}`],
-                styles[`button--${size}`]
+                styles[`button--${size}`],
+                className
             )}
             {...attrs}
         >
