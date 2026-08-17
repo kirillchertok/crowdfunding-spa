@@ -1,12 +1,28 @@
 import { lazy } from 'react';
 
 const Home = lazy(() => import('@/pages/Home/Home'));
+const Locations = lazy(() => import('@/pages/Locations/Locations'));
 const NotFound = lazy(() => import('@/pages/NotFound/NotFound'));
 
+export const PATHS = {
+    HOME: '/',
+    LOGIN: '/login',
+    LOCATIONS: '/locations',
+    SHOP: '/shop',
+};
+
 export const ROUTES = [
-    { path: '/', element: <Home />, displayName: 'Home' },
-    { path: '/login', element: <Home />, displayName: 'Login' },
-    { path: '/locations', element: <Home />, displayName: 'Locations' },
-    { path: '/shop', element: <Home />, displayName: 'Shop' },
+    { path: PATHS.HOME, element: <Home />, displayName: 'Home' },
+    {
+        path: PATHS.LOGIN,
+        element: <Home />,
+        displayName: 'Login',
+    },
+    {
+        path: PATHS.LOCATIONS,
+        element: <Locations />,
+        displayName: 'Locations',
+    },
+    { path: PATHS.SHOP, element: <Home />, displayName: 'Shop' },
     { path: '*', element: <NotFound /> },
 ];

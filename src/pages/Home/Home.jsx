@@ -1,10 +1,17 @@
+import { useNavigate } from 'react-router-dom';
+
 import { HomeInfo } from '@/components/HomeInfo/HomeInfo';
 import { Button } from '@/components/ui/Button/Button';
 import { Layout } from '@/components/ui/Layout/Layout';
+import { PATHS } from '@/constants/routes';
 
 import * as styles from './Home.module.css';
 
 const Home = () => {
+    const navigate = useNavigate();
+
+    const handleStart = () => navigate(PATHS.LOCATIONS, { replace: true });
+
     return (
         <Layout type='rice-flower'>
             <div className={styles.container}>
@@ -13,7 +20,7 @@ const Home = () => {
                     <br />
                     and grow your own vegetables
                 </h1>
-                <Button option='first'>Let&apos;s start</Button>
+                <Button onClick={handleStart}>Let&apos;s start</Button>
                 <HomeInfo />
             </div>
         </Layout>
