@@ -20,6 +20,7 @@
 
 .error_boundary__message {
     color: var(--font-color-error);
+    font-size: 1.5rem;
     max-width: 100%;
     overflow: hidden;
 }
@@ -33,7 +34,6 @@
     max-height: 60vh;
     overflow: auto;
     margin: 0;
-    font-size: 14px;
     line-height: 1.4;
     text-align: left;
     background-color: var(--background-color-darker-white);

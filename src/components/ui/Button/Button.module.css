@@ -1,0 +1,42 @@
+@import '@/styles/variables.css';
+
+.button {
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-lg);
+    font-family: var(--font-family-dm-sans);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s linear;
+}
+
+.button:hover {
+    transform: scale(1.02);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.button--first {
+    background-color: var(--color-dark-chartreuse);
+    color: var(--font-color-white);
+    border: none;
+}
+
+.button--small {
+    width: 5rem;
+    height: 2.5rem;
+}
+
+.button--medium {
+    width: 7rem;
+    height: 3rem;
+}
+
+.button--large {
+    width: 9rem;
+    height: 4.5rem;
+}
