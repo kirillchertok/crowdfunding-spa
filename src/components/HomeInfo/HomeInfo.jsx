@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { HOME_INFO } from '@/constants/homeInfo';
 
 import * as styles from './HomeInfo.module.css';
