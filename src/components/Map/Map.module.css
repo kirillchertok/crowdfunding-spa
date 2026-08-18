@@ -1,6 +1,6 @@
 .container {
-    height: 50%;
-    aspect-ratio: 1 / 1;
+    width: 35%;
+    height: 60vh;
     z-index: 0;
     position: relative;
 }

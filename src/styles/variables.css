@@ -38,8 +38,12 @@
     --background-color-darker-white: rgba(245, 245, 245, 1);
     --background-color-rice-flower: rgba(240, 254, 226, 1);
 
+    --color-charred: rgba(71, 71, 71, 1);
     --color-pale-silver: rgba(234, 234, 234, 1);
     --color-dark-chartreuse: rgba(104, 208, 23, 1);
+
+    --border-color-black: rgba(0, 0, 0, 1);
+    --border-color-chartreuse: rgba(104, 208, 23, 1);
 
     --font-color-black: rgba(0, 0, 0, 1);
     --font-color-white: rgba(255, 255, 255, 1);

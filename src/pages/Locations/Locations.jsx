@@ -9,23 +9,33 @@ import { INPUT_SIZE } from '@/constants/inputStyle';
 import * as styles from './Locations.module.css';
 
 const Locations = () => {
-    const [searchQueue, setSearhQueue] = useState('');
+    const [searchInput, setSearchInput] = useState('');
+    const [searchQuery, setSearchQuery] = useState('');
 
-    const handleSearchChange = e => setSearhQueue(e.target.value);
+    const handleSearchChange = e => {
+        setSearchInput(e.target.value);
+    };
+
+    const handleSearch = () => {
+        setSearchQuery(searchInput);
+    };
 
     return (
         <Layout>
             <div className={styles.container}>
                 <h1 className={styles.header}>Locations</h1>
+
                 <Input
-                    value={searchQueue}
+                    value={searchInput}
                     onChange={handleSearchChange}
                     size={INPUT_SIZE.LARGE}
                     icon={magnifierIcon}
-                    buttonValue={'Search'}
-                    placeHolder='Search by city, country, village place'
+                    buttonValue='Search'
+                    onButtonClick={handleSearch}
+                    placeholder='Search by city, country, village place'
                 />
-                <SearchResults searchQueue={searchQueue} />
+
+                <SearchResults search={searchQuery} />
             </div>
         </Layout>
     );

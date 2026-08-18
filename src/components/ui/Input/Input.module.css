@@ -6,8 +6,8 @@
     justify-content: space-between;
     align-items: center;
     gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
     border-radius: var(--border-radius-lg);
-    height: 3.5rem;
 }
 
 .container--first {
@@ -16,17 +16,14 @@
 }
 
 .container--small {
-    padding: var(--spacing-sm);
     width: 7rem;
 }
 
 .container--medium {
-    padding: var(--spacing-sm);
     width: 10rem;
 }
 
 .container--large {
-    padding: var(--spacing-md);
     width: 60%;
 }
 
