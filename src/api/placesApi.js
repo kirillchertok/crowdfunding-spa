@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+import { removeEmptyParams } from '@/utils/removeEmptyParams';
+
 export const placesApi = createApi({
     reducerPath: 'placesApi',
 
@@ -11,7 +13,7 @@ export const placesApi = createApi({
         getPlaces: builder.query({
             query: params => ({
                 url: '/properties',
-                params,
+                params: removeEmptyParams(params),
             }),
         }),
     }),

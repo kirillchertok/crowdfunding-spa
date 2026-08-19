@@ -1,22 +1,37 @@
-import { MapContainer, TileLayer } from 'react-leaflet';
+import L from 'leaflet';
+import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 
+import placeMarker from '@/assets/images/place-marker.svg';
 import { BASE_COORDINATES } from '@/constants/baseCoordinates';
 
+import { PlaceMarker } from '../PlaceMarker/PlaceMarker';
 import * as styles from './Map.module.css';
+import { UserLocation } from './UserLocation/UserLocaion';
 
-export const Map = ({ zoom = 16, scrollWheelZoom = true }) => {
+export const Map = ({ places, zoom = 16, scrollWheelZoom = true }) => {
     return (
         <div className={styles.container}>
             <MapContainer
+                center={BASE_COORDINATES}
                 zoom={zoom}
                 scrollWheelZoom={scrollWheelZoom}
-                center={BASE_COORDINATES}
                 style={{ height: '100%', width: '100%' }}
             >
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                 />
+                <UserLocation />
+                {places.map(
+                    place =>
+                        place.latitude &&
+                        place.longitude && (
+                            <PlaceMarker
+                                key={place.id}
+                                place={place}
+                            />
+                        )
+                )}
             </MapContainer>
         </div>
     );

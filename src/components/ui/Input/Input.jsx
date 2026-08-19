@@ -10,6 +10,7 @@ export const Input = ({
     option = INPUT_OPTIONS.FIRST,
     size = INPUT_SIZE.MEDIUM,
     className,
+    labelValue = null,
     icon = null,
     buttonValue = null,
     onButtonClick = null,
@@ -23,6 +24,9 @@ export const Input = ({
                 styles.container,
                 styles[`container--${option}`],
                 styles[`container--${size}`],
+                {
+                    [styles['container--radio']]: attrs.type === 'radio',
+                },
                 className
             )}
         >
@@ -32,6 +36,14 @@ export const Input = ({
                     className={styles.icon}
                 >
                     {icon}
+                </label>
+            )}
+            {labelValue && (
+                <label
+                    htmlFor={attrs.id ?? inputId}
+                    className={styles.label}
+                >
+                    {labelValue}
                 </label>
             )}
             <input

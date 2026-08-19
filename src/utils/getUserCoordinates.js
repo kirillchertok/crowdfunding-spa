@@ -9,9 +9,8 @@ export async function getUserCoordinates() {
 
         navigator.geolocation.getCurrentPosition(position => {
             const { latitude, longitude } = position.coords;
-            const roundedLat = parseFloat(latitude.toFixed(4));
-            const roundedLng = parseFloat(longitude.toFixed(4));
-            resolve([roundedLat, roundedLng]);
+
+            resolve([Number(latitude.toFixed(4)), Number(longitude.toFixed(4))]);
         });
     });
 }

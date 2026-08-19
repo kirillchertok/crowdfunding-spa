@@ -1,19 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialSlice = {
-    state: true,
+const initialState = {
+    isOpenFilterModal: false,
 };
 
 const appSlice = createSlice({
     name: 'app',
-    initialState: initialSlice,
+    initialState: initialState,
     reducers: {
-        setState: (state, action) => {
-            state.state = action.payload;
+        openFilterModal: state => {
+            state.isOpenFilterModal = true;
+        },
+        closeFilterModal: state => {
+            state.isOpenFilterModal = false;
+        },
+        toogleFilterModal: state => {
+            state.isOpenFilterModal = !state.isOpenFilterModal;
         },
     },
 });
 
-export const { setState } = appSlice.actions;
+export const { openFilterModal, closeFilterModal, toogleFilterModal } = appSlice.actions;
 
 export default appSlice.reducer;
