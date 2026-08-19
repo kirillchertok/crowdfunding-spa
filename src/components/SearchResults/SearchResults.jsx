@@ -34,18 +34,6 @@ export const SearchResults = ({ search }) => {
     });
 
     const places = data?.items ?? [];
-    const markers = places
-        .map(
-            place =>
-                place.id &&
-                place.latitude &&
-                place.longitude && {
-                    id: place.id,
-                    latitude: place.latitude,
-                    longitude: place.longitude,
-                }
-        )
-        .filter(marker => marker);
 
     const handleChangeSort = e => setSort(e.target.value);
     const handleCloseFilterModal = () => dispatch(closeFilterModal());

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { BUTTON_OPTIONS } from '@/constants/buttonStyle';
 import { FILTERS } from '@/constants/filters';
-import { INPUT_OPTIONS, INPUT_SIZE } from '@/constants/inputStyle';
+import { INPUT_SIZE } from '@/constants/inputStyle';
 
 import { Button } from '../ui/Button/Button';
 import { Input } from '../ui/Input/Input';

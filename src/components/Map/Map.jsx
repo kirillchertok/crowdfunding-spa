@@ -1,7 +1,5 @@
-import L from 'leaflet';
-import { MapContainer, Marker, TileLayer } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 
-import placeMarker from '@/assets/images/place-marker.svg';
 import { BASE_COORDINATES } from '@/constants/baseCoordinates';
 
 import { PlaceMarker } from '../PlaceMarker/PlaceMarker';
