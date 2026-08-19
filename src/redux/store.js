@@ -3,13 +3,15 @@ import persistReducer from 'redux-persist/es/persistReducer';
 import persistStore from 'redux-persist/es/persistStore';
 import storage from 'redux-persist/lib/storage';
 
-import { api } from '@/api/api';
+import { authApi } from '@/api/authApi';
+import { placesApi } from '@/api/placesApi';
 import appReducer from '@/redux/slices/appSlice';
 
 const rootReducer = combineReducers({
     app: appReducer,
 
-    [api.reducerPath]: api.reducer,
+    [authApi.reducerPath]: authApi.reducer,
+    [placesApi.reducerPath]: placesApi.reducer,
 });
 
 const persistConfig = {
@@ -35,7 +37,9 @@ export const store = configureStore({
                     'persist/FLUSH',
                 ],
             },
-        }).concat(api.middleware),
+        })
+            .concat(authApi.middleware)
+            .concat(placesApi.middleware),
 });
 
 export const persistor = persistStore(store);

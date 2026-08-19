@@ -1,0 +1,72 @@
+@import '@/styles/variables.css';
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-lg);
+}
+
+.container--first {
+    background-color: var(--color-pale-silver);
+    color: var(--font-color-black);
+}
+
+.container--small {
+    width: 7rem;
+}
+
+.container--medium {
+    width: 10rem;
+}
+
+.container--large {
+    width: 60%;
+}
+
+.container--full {
+    width: 100%;
+}
+
+.container--radio {
+    width: 2rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    justify-content: center;
+    padding: var(--spacing-xs);
+}
+
+.container--radio .label {
+    position: absolute;
+    left: 110%;
+}
+
+.icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.label {
+    font-size: 1rem;
+    font-family: var(--font-family-dm-sans);
+}
+
+.input {
+    font-family: var(--font-family-dm-sans);
+    height: 100%;
+    width: 100%;
+    color: inherit;
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+
+.input:focus {
+    outline: none;
+}

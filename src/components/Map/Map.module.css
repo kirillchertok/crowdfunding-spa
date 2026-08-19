@@ -1,0 +1,6 @@
+.container {
+    width: 35%;
+    height: 60vh;
+    z-index: 0;
+    position: relative;
+}
