@@ -12,9 +12,8 @@
 }
 
 .modal {
-    width: 25%;
+    min-width: 25%;
     min-height: 10%;
-    max-height: 60%;
     background-color: var(--background-color-white);
     padding: var(--spacing-md);
     display: flex;
@@ -31,6 +30,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: var(--spacing-sm);
 }
 
 .header__text {

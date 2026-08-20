@@ -1,14 +1,16 @@
+import classNames from 'classnames';
 import { MapContainer, TileLayer } from 'react-leaflet';
 
 import { BASE_COORDINATES } from '@/constants/baseCoordinates';
+import { MAP_SIZE } from '@/constants/mapStyles';
 
 import { PlaceMarker } from '../PlaceMarker/PlaceMarker';
 import * as styles from './Map.module.css';
 import { UserLocation } from './UserLocation/UserLocaion';
 
-export const Map = ({ places, zoom = 16, scrollWheelZoom = true }) => {
+export const Map = ({ size = MAP_SIZE.MEDIUM, places, zoom = 16, scrollWheelZoom = true }) => {
     return (
-        <div className={styles.container}>
+        <div className={classNames(styles.container, styles[`container--${size}`])}>
             <MapContainer
                 center={BASE_COORDINATES}
                 zoom={zoom}
