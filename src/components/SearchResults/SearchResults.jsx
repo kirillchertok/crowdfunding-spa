@@ -6,8 +6,9 @@ import { BUTTON_OPTIONS, BUTTON_SIZE } from '@/constants/buttonStyle';
 import { FETCH_LIMIT } from '@/constants/fetchLimit';
 import { FILTERS } from '@/constants/filters';
 import { filterIcon } from '@/constants/icons';
+import { MODALS } from '@/constants/modals';
 import { SORT_BASE_OPTION, SORT_OPTIONS } from '@/constants/sortOptions';
-import { closeFilterModal, openFilterModal } from '@/redux/slices/appSlice';
+import { closeModal, openModal } from '@/redux/slices/modalSlice';
 
 import { FilterModal } from '../FilterModal/FilterModal';
 import { Map } from '../Map/Map';
@@ -20,7 +21,7 @@ import * as styles from './SearchResults.module.css';
 export const SearchResults = ({ search }) => {
     const dispatch = useDispatch();
 
-    const isOpenFilterModal = useSelector(state => state.app.isOpenFilterModal);
+    const openedModal = useSelector(state => state.modal.openedModal);
     const [filters, setFilters] = useState(FILTERS);
 
     const sortId = useId();
@@ -36,8 +37,8 @@ export const SearchResults = ({ search }) => {
     const places = data?.items ?? [];
 
     const handleChangeSort = e => setSort(e.target.value);
-    const handleCloseFilterModal = () => dispatch(closeFilterModal());
-    const handleOpenFilterModal = () => dispatch(openFilterModal());
+    const handleCloseFilterModal = () => dispatch(closeModal());
+    const handleOpenFilterModal = () => dispatch(openModal(MODALS.FILTER_LOCATIONS));
 
     return (
         <section className={styles.container}>
@@ -58,7 +59,7 @@ export const SearchResults = ({ search }) => {
                         Filter {filterIcon}
                     </Button>
                     <Modal
-                        isOpen={isOpenFilterModal}
+                        isOpen={openedModal === MODALS.FILTER_LOCATIONS}
                         onClose={handleCloseFilterModal}
                         title='Filters'
                     >

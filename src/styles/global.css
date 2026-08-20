@@ -31,4 +31,5 @@ img {
 
 html {
     font-size: var(--font-size-md);
+    overflow-x: hidden;
 }
