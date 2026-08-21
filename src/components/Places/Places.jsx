@@ -38,8 +38,6 @@ export const Places = () => {
         cursor: cursors[page],
     });
 
-    console.log(isLoading);
-
     const places = data?.items ?? [];
 
     useEffect(() => {

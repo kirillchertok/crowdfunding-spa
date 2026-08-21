@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
 
-import { ROUTES } from '@/constants/routes';
+import { PROTECTED_ROUTES } from '@/constants/routes';
 
 import * as styles from './Nav.module.css';
 
@@ -10,7 +10,7 @@ export const Nav = () => {
 
     return (
         <nav className={styles.nav}>
-            {ROUTES.map(
+            {PROTECTED_ROUTES.map(
                 route =>
                     route.displayName && (
                         <Link
