@@ -1,8 +1,12 @@
 # Crowdfunding SPA
 
-Одностраничное React-приложение для поиска и просмотра инвестиционных предложений в сфере сельского хозяйства и земли. Проект реализован в стиле crowdfunding-платформы: пользователь может просматривать стартовую страницу, логиниться, искать объекты, применять фильтры, сортировку и видеть результаты на интерактивной карте.
+A single-page React application for searching and viewing agricultural and land investment opportunities. The project is built in a crowdfunding style: users can view the landing page, log in, search for listings, apply filters, sort results, and see them on an interactive map.
 
-## Основной стек
+## Deployment link
+
+https://task5-innowise.netlify.app/
+
+## Tech stack
 
 - React 19
 - React Router
@@ -13,36 +17,36 @@
 - CSS Modules / native CSS
 - DummyJSON API
 
-## Краткая функциональность
+## Brief functionality
 
-- Аутентификация пользователя через форму логина
-- Защищённые маршруты: главная страница, локации, магазин
-- Главная страница с hero-блоком и запуском пользовательского сценария
-- Поиск объектов по названию/региону/городу/категории
-- Фильтрация и сортировка результатов
-- Отображение списка объектов и карты одновременно
-- Маркеры на карте для каждого объекта
-- Сохранение состояния пользователя и модальных окон через Redux Persist
+- User authentication via a login form
+- Protected routes: home page, locations, shop
+- Home page with a hero section and a call-to-action flow
+- Search for listings by title, region, city, or category
+- Filtering and sorting of results
+- Simultaneous display of the list and map
+- Map markers for each listing
+- Saving user state and modal state with Redux Persist
 
-## Маршруты
+## Routes
 
-- `/login` — публичная страница входа
-- `/` — главная страница
-- `/locations` — страница поиска и просмотра локаций
-- `/shop` — защищённая страница магазина
+- `/login` — public login page
+- `/` — home page
+- `/locations` — page for searching and viewing locations
+- `/shop` — protected shop page
 
-## Тестовые данные для входа
+## Test login credentials
 
-Для проверки работы аутентификации можно использовать стандартные учетные данные DummyJSON:
+To verify authentication, you can use the standard DummyJSON credentials:
 
 - Username: `emilys`
 - Password: `emilyspass`
 
-## Структура проекта
+## Project structure
 
 ```text
 .
-├── .env.example                 # пример переменных окружения
+├── .env.example                 # environment variable example
 ├── .gitignore
 ├── .prettierrc
 ├── babel.config.js
@@ -112,96 +116,96 @@
 │   │   ├── removeEmptyParams.js
 │   │   └── tokenStorage.js
 │   └── index.jsx
-└── dist/                         # сборка проекта (после build)
+└── dist/                         # project build output (after build)
 ```
 
-## Зависимости
+## Dependencies
 
-### Основные зависимости
+### Main dependencies
 
-- `react` — UI-фреймворк
-- `react-dom` — рендеринг приложения
-- `react-router-dom` — маршрутизация
-- `@reduxjs/toolkit` — глобальное состояние
-- `react-redux` — интеграция Redux с React
-- `redux-persist` — сохранение состояния после обновления страницы
-- `leaflet` — интерактивная карта
-- `react-leaflet` — React-компоненты для Leaflet
-- `classnames` — работа с className
-- `react-icons` — иконки интерфейса
+- `react` — UI framework
+- `react-dom` — application rendering
+- `react-router-dom` — routing
+- `@reduxjs/toolkit` — global state management
+- `react-redux` — Redux integration for React
+- `redux-persist` — persistence of state after page refresh
+- `leaflet` — interactive map library
+- `react-leaflet` — React components for Leaflet
+- `classnames` — class name handling
+- `react-icons` — interface icons
 
-### Dev зависимости
+### Dev dependencies
 
-- `webpack`, `webpack-cli`, `webpack-dev-server` — сборка и локальный запуск
-- `babel-loader`, `@babel/core`, `@babel/preset-env`, `@babel/preset-react` — транспиляция JavaScript
-- `eslint`, `prettier`, `stylelint` — линтинг и форматирование
-- `html-webpack-plugin`, `mini-css-extract-plugin`, `css-loader`, `style-loader` — работа с HTML/CSS сборкой
-- `dotenv-webpack` — загрузка переменных окружения
-- `husky`, `@commitlint/cli` — git-хуки и проверка коммитов
+- `webpack`, `webpack-cli`, `webpack-dev-server` — project build and local run
+- `babel-loader`, `@babel/core`, `@babel/preset-env`, `@babel/preset-react` — JavaScript transpilation
+- `eslint`, `prettier`, `stylelint` — linting and formatting
+- `html-webpack-plugin`, `mini-css-extract-plugin`, `css-loader`, `style-loader` — HTML/CSS build support
+- `dotenv-webpack` — environment variable loading
+- `husky`, `@commitlint/cli` — git hooks and commit validation
 
-## Подготовка окружения
+## Environment setup
 
-Создайте файл `.env` на основе `.env.example`:
+Create a `.env` file based on `.env.example`:
 
 ```bash
 copy .env.example .env
 ```
 
-или на Linux/macOS:
+or on Linux/macOS:
 
 ```bash
 cp .env.example .env
 ```
 
-После этого задайте значения переменных:
+Then set the variables:
 
 ```env
 AUTH_API_URL=
 PLACES_API_URL=
 ```
 
-> В проекте используются переменные окружения для подключения к API, поэтому перед запуском нужно заполнить `.env` корректными значениями.
+> The project uses environment variables to connect to the API, so you need to fill in the correct values before running it.
 
-## Запуск проекта
+## Running the project
 
-Установка зависимостей:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Запуск в режиме разработки:
+Run in development mode:
 
 ```bash
 npm start
 ```
 
-После этого приложение откроется на:
+Then open the app at:
 
 ```text
 http://localhost:3000
 ```
 
-Сборка продакшн-версии:
+Build the production version:
 
 ```bash
 npm run build
 ```
 
-Проверка кода линтером:
+Run lint checks:
 
 ```bash
 npm run lint
 ```
 
-Автоматическое исправление линтера:
+Automatically fix lint issues:
 
 ```bash
 npm run lint:fix
 ```
 
-## Примечания
+## Notes
 
-- Защищённые страницы доступны только после успешной авторизации.
-- Состояние аутентификации сохраняется в Redux и поддерживается через `redux-persist`.
-- Для демонстрации используются данные DummyJSON, адаптированные под тематику crowdfunding-проекта.
+- Protected pages are only available after successful authentication.
+- Authentication state is saved in Redux and managed through `redux-persist`.
+- DummyJSON data is not used for demonstration and adapted to the crowdfunding project theme.
