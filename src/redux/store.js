@@ -6,9 +6,11 @@ import storage from 'redux-persist/lib/storage';
 import { authApi } from '@/api/authApi';
 import { placesApi } from '@/api/placesApi';
 import modalReducer from '@/redux/slices/modalSlice';
+import userReducer from '@/redux/slices/userSlice';
 
 const rootReducer = combineReducers({
     modal: modalReducer,
+    user: userReducer,
 
     [authApi.reducerPath]: authApi.reducer,
     [placesApi.reducerPath]: placesApi.reducer,
@@ -17,7 +19,7 @@ const rootReducer = combineReducers({
 const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['modal'],
+    whitelist: ['modal', 'user'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

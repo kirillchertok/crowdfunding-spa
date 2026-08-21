@@ -12,6 +12,8 @@ import App from '@/app/App';
 import ErrorBoundary from '@/components/ErrorBoundary/ErrorBoundary';
 import { persistor, store } from '@/redux/store';
 
+import { AuthProvider } from './components/AuthProvider/AuthProvider';
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 
@@ -24,7 +26,9 @@ root.render(
                     loading={null}
                 >
                     <ErrorBoundary>
-                        <App />
+                        <AuthProvider>
+                            <App />
+                        </AuthProvider>
                     </ErrorBoundary>
                 </PersistGate>
             </Provider>

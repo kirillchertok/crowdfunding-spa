@@ -3,7 +3,7 @@ import { lazy } from 'react';
 const Home = lazy(() => import('@/pages/Home/Home'));
 const Locations = lazy(() => import('@/pages/Locations/Locations'));
 const Shop = lazy(() => import('@/pages/Shop/Shop'));
-const NotFound = lazy(() => import('@/pages/NotFound/NotFound'));
+const Login = lazy(() => import('@/pages/Login/Login'));
 
 export const PATHS = {
     HOME: '/',
@@ -12,18 +12,20 @@ export const PATHS = {
     SHOP: '/shop',
 };
 
-export const ROUTES = [
-    { path: PATHS.HOME, element: <Home />, displayName: 'Home' },
+export const PUBLIC_ROUTES = [
     {
         path: PATHS.LOGIN,
-        element: <Home />,
+        element: <Login />,
         displayName: 'Login',
     },
+];
+
+export const PROTECTED_ROUTES = [
+    { path: PATHS.HOME, element: <Home />, displayName: 'Home' },
     {
         path: PATHS.LOCATIONS,
         element: <Locations />,
         displayName: 'Locations',
     },
     { path: PATHS.SHOP, element: <Shop />, displayName: 'Shop' },
-    { path: '*', element: <NotFound /> },
 ];
