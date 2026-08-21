@@ -47,7 +47,6 @@ const Login = () => {
             dispatch(
                 setLogin({
                     user: data,
-                    accessToken: data.accessToken,
                 })
             );
 

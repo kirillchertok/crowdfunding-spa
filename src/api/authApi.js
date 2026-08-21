@@ -53,7 +53,6 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
 
             api.dispatch(
                 login({
-                    accessToken,
                     user: api.getState().auth.user,
                 })
             );

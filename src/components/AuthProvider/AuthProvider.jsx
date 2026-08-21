@@ -23,7 +23,6 @@ export const AuthProvider = ({ children }) => {
             dispatch(
                 login({
                     user,
-                    accessToken: token,
                 })
             );
         }
