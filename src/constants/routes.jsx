@@ -1,14 +1,9 @@
-import Home from '@/pages/Home/Home';
-import Locations from '@/pages/Locations/Locations';
-import Login from '@/pages/Login/Login';
-import Shop from '@/pages/Shop/Shop';
+import { lazy } from 'react';
 
-// import { lazy } from 'react';
-
-// const Home = lazy(() => import('@/pages/Home/Home'));
-// const Locations = lazy(() => import('@/pages/Locations/Locations'));
-// const Shop = lazy(() => import('@/pages/Shop/Shop'));
-// const Login = lazy(() => import('@/pages/Login/Login'));
+const Home = lazy(() => import('@/pages/Home/Home'));
+const Locations = lazy(() => import('@/pages/Locations/Locations'));
+const Shop = lazy(() => import('@/pages/Shop/Shop'));
+const Login = lazy(() => import('@/pages/Login/Login'));
 
 export const PATHS = {
     HOME: '/',
