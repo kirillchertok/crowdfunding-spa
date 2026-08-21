@@ -25,6 +25,13 @@
     gap: var(--spacing-lg);
 }
 
+@media (max-width: 468px) {
+    .list {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
 .pagination {
     margin-top: var(--spacing-md);
     justify-self: center;

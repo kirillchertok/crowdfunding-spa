@@ -1,4 +1,4 @@
-import { TOKEN_KEYS } from '@/constants/tokenKeys';
+import { TOKEN_KEYS } from '@/constants/tokens';
 
 export default class TokenStorage {
     static getAccessToken() {

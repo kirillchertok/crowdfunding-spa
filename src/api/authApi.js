@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+import { TOKENS_EXPIRE } from '@/constants/tokens';
 import { login, logout } from '@/redux/slices/userSlice';
 import TokenStorage from '@/utils/tokenStorage';
 
@@ -36,7 +37,7 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
                 method: 'POST',
                 body: {
                     refreshToken,
-                    expiresInMins: 30,
+                    expiresInMins: TOKENS_EXPIRE,
                 },
             },
             api,
@@ -44,6 +45,7 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
         );
 
         if (refreshResult.data) {
+            console.log(refreshResult.data);
             const { accessToken, refreshToken: newRefreshToken } = refreshResult.data;
 
             TokenStorage.setTokens({
@@ -53,7 +55,7 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
 
             api.dispatch(
                 login({
-                    user: api.getState().auth.user,
+                    user: api.getState().user.user,
                 })
             );
 
@@ -80,7 +82,7 @@ export const authApi = createApi({
                 body: {
                     username: credentials.username,
                     password: credentials.password,
-                    expiresInMins: 30,
+                    expiresInMins: TOKENS_EXPIRE,
                 },
             }),
         }),
@@ -95,7 +97,7 @@ export const authApi = createApi({
                 method: 'POST',
                 body: {
                     refreshToken,
-                    expiresInMins: 30,
+                    expiresInMins: TOKENS_EXPIRE,
                 },
             }),
         }),
