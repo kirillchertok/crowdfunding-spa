@@ -1,0 +1,60 @@
+@import '@/styles/variables.css';
+
+.button {
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    font-family: var(--font-family-dm-sans);
+    gap: var(--spacing-sm);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s linear;
+    font-size: 1.1rem;
+}
+
+.button:hover {
+    transform: scale(1.02);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.button--first {
+    background-color: var(--color-dark-chartreuse);
+    color: var(--font-color-white);
+    border: none;
+}
+.button--first svg {
+    fill: var(--font-color-white);
+}
+
+.button--second {
+    background-color: var(--background-color-white);
+    color: var(--font-color-black);
+    border: 1px solid var(--border-color-black);
+}
+
+.button--third {
+    background-color: var(--background-color-white);
+    color: var(--font-color-black);
+    border: 1px solid var(--border-color-chartreuse);
+}
+
+.button--small {
+    width: 5rem;
+    height: 3rem;
+    border-radius: var(--border-radius-md);
+}
+
+.button--medium {
+    width: 7rem;
+    height: 3rem;
+    border-radius: var(--border-radius-lg);
+}
+
+.button--large {
+    width: 9rem;
+    height: 4.5rem;
+}

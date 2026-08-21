@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.label {
+    font-family: var(--font-family-dm-sans);
+}
+
+.select {
+    border-radius: var(--border-radius-md);
+    font-weight: var(--font-weight-md);
+    font-family: var(--font-family-dm-sans);
+}
+
+.select:focus {
+    outline: none;
+}
+
+.option {
+    font-family: var(--font-family-dm-sans);
+}
