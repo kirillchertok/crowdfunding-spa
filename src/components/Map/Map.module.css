@@ -9,6 +9,12 @@
 }
 
 .container--large {
-    width: 70vh;
+    width: 70vw;
     height: 70vh;
+}
+
+@media (max-width: 468px) {
+    .container--large {
+        width: 100%;
+    }
 }

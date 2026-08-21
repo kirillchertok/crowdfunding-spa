@@ -40,3 +40,24 @@
     color: var(--font-color-attractive-dark-primary);
     align-self: center;
 }
+
+@media (max-width: 1024px) {
+    .modal {
+        min-width: 60%;
+        min-height: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal {
+        min-width: 60%;
+        min-height: 40%;
+    }
+}
+
+@media (max-width: 468px) {
+    .modal {
+        width: 90%;
+        min-height: 40%;
+    }
+}

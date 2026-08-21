@@ -33,3 +33,14 @@ html {
     font-size: var(--font-size-md);
     overflow-x: hidden;
 }
+@media (max-width: 768px) {
+    .form {
+        font-size: var(--font-size-md);
+    }
+}
+
+@media (max-width: 468px) {
+    .form {
+        font-size: var(--font-size-sm);
+    }
+}

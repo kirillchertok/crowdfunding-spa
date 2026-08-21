@@ -5,7 +5,7 @@ import { PROTECTED_ROUTES } from '@/constants/routes';
 
 import * as styles from './Nav.module.css';
 
-export const Nav = () => {
+export const Nav = ({ onNavigate }) => {
     const location = useLocation();
 
     return (
@@ -20,6 +20,7 @@ export const Nav = () => {
                                 location.pathname === route.path && styles['nav__route--active']
                             )}
                             to={route.path}
+                            onClick={onNavigate}
                         >
                             {route.displayName}
                         </Link>

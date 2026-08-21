@@ -67,7 +67,7 @@ const Login = () => {
                     name='username'
                     option={INPUT_OPTIONS.FIRST}
                     size={INPUT_SIZE.FULL}
-                    value={form.login}
+                    value={form.username}
                     onChange={handleChange}
                     placeholder='Username'
                     required
