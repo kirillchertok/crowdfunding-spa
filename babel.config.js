@@ -1,4 +1,5 @@
 module.exports = {
+    plugins: ['babel-plugin-react-compiler'],
     presets: [
         [
             '@babel/preset-env',
