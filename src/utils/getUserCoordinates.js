@@ -7,10 +7,13 @@ export async function getUserCoordinates() {
             return;
         }
 
-        navigator.geolocation.getCurrentPosition(position => {
-            const { latitude, longitude } = position.coords;
+        navigator.geolocation.getCurrentPosition(
+            position => {
+                const { latitude, longitude } = position.coords;
 
-            resolve([Number(latitude.toFixed(4)), Number(longitude.toFixed(4))]);
-        });
+                resolve([Number(latitude.toFixed(4)), Number(longitude.toFixed(4))]);
+            },
+            () => resolve(BASE_COORDINATES)
+        );
     });
 }

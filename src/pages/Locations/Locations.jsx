@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { SearchResults } from '@/components/SearchResults/SearchResults';
 import { Input } from '@/components/ui/Input/Input';
 import { Layout } from '@/components/ui/Layout/Layout';
-import { magnifierIcon } from '@/constants/icons';
+import { MagnifierIcon } from '@/constants/icons';
 import { INPUT_SIZE } from '@/constants/inputStyle';
 
 import * as styles from './Locations.module.css';
@@ -29,7 +29,7 @@ const Locations = () => {
                     value={searchInput}
                     onChange={handleSearchChange}
                     size={INPUT_SIZE.LARGE}
-                    icon={magnifierIcon}
+                    icon={<MagnifierIcon />}
                     buttonValue='Search'
                     onButtonClick={handleSearch}
                     placeholder='Search by city, country, village place'

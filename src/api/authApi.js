@@ -45,7 +45,6 @@ export const baseQueryWithReauth = async (args, api, extraOptions) => {
         );
 
         if (refreshResult.data) {
-            console.log(refreshResult.data);
             const { accessToken, refreshToken: newRefreshToken } = refreshResult.data;
 
             TokenStorage.setTokens({

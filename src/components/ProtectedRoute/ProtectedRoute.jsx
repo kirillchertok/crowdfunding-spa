@@ -11,7 +11,7 @@ export const ProtectedRoute = () => {
         return (
             <Navigate
                 to={PATHS.LOGIN}
-                from={{ from: location }}
+                state={{ from: location }}
                 replace
             />
         );

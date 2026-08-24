@@ -5,7 +5,7 @@ import { useGetPlacesQuery } from '@/api/placesApi';
 import { BUTTON_OPTIONS, BUTTON_SIZE } from '@/constants/buttonStyle';
 import { FETCH_LIMIT } from '@/constants/fetchLimit';
 import { FILTERS } from '@/constants/filters';
-import { filterIcon } from '@/constants/icons';
+import { FilterIcon } from '@/constants/icons';
 import { MODALS } from '@/constants/modals';
 import { SORT_BASE_OPTION, SORT_OPTIONS } from '@/constants/sortOptions';
 import { closeModal, openModal } from '@/redux/slices/modalSlice';
@@ -56,7 +56,7 @@ export const SearchResults = ({ search }) => {
                         size={BUTTON_SIZE.SMALL}
                         onClick={handleOpenFilterModal}
                     >
-                        Filter {filterIcon}
+                        Filter <FilterIcon />
                     </Button>
                     <Modal
                         isOpen={openedModal === MODALS.FILTER_LOCATIONS}

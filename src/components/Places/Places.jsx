@@ -1,11 +1,11 @@
-import { useEffect, useId, useState } from 'react';
+import { useId, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useGetPlacesQuery } from '@/api/placesApi';
 import { BUTTON_OPTIONS, BUTTON_SIZE } from '@/constants/buttonStyle';
 import { FETCH_LIMIT } from '@/constants/fetchLimit';
 import { FILTERS } from '@/constants/filters';
-import { filterIcon, mapIcon } from '@/constants/icons';
+import { FilterIcon, MapIcon } from '@/constants/icons';
 import { MAP_SIZE } from '@/constants/mapStyles';
 import { MODALS } from '@/constants/modals';
 import { SORT_BASE_OPTION, SORT_OPTIONS } from '@/constants/sortOptions';
@@ -40,18 +40,6 @@ export const Places = () => {
 
     const places = data?.items ?? [];
 
-    useEffect(() => {
-        if (!data?.next_cursor) {
-            return;
-        }
-
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setCursors(prev => ({
-            ...prev,
-            [page + 1]: data.next_cursor,
-        }));
-    }, [data, page]);
-
     const handleChangeSort = e => {
         setSort(e.target.value);
         setPage(1);
@@ -66,7 +54,18 @@ export const Places = () => {
     const handleOpenFilterModal = () => dispatch(openModal(MODALS.FILTER_SHOP));
     const handleOpenMapModal = () => dispatch(openModal(MODALS.MAP));
     const handlePrevPage = () => setPage(prev => prev - 1);
-    const handleNextPage = () => setPage(prev => prev + 1);
+    const handleNextPage = () => {
+        if (!data?.next_cursor) {
+            return;
+        }
+
+        setCursors(prev => ({
+            ...prev,
+            [page + 1]: data.next_cursor,
+        }));
+
+        setPage(prev => prev + 1);
+    };
 
     return (
         <div className={styles.container}>
@@ -82,13 +81,13 @@ export const Places = () => {
                     option={BUTTON_OPTIONS.SECOND}
                     onClick={handleOpenFilterModal}
                 >
-                    Filter {filterIcon}
+                    Filter <FilterIcon />
                 </Button>
                 <Button
                     option={BUTTON_OPTIONS.FIRST}
                     onClick={handleOpenMapModal}
                 >
-                    Map {mapIcon}
+                    Map <MapIcon />
                 </Button>
                 <Modal
                     isOpen={openedModal === MODALS.MAP}

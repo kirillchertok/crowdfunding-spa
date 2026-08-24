@@ -9,19 +9,19 @@ const App = () => {
     return (
         <Suspense fallback='loading'>
             <Routes>
-                {PUBLIC_ROUTES.map(({ path, element }) => (
+                {PUBLIC_ROUTES.map(({ path, Element }) => (
                     <Route
                         key={path}
                         path={path}
-                        element={element}
+                        element={<Element />}
                     />
                 ))}
                 <Route element={<ProtectedRoute />}>
-                    {PROTECTED_ROUTES.map(({ path, element }) => (
+                    {PROTECTED_ROUTES.map(({ path, Element }) => (
                         <Route
                             key={path}
                             path={path}
-                            element={element}
+                            element={<Element />}
                         />
                     ))}
                 </Route>
