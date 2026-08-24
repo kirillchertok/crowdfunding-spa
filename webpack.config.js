@@ -44,11 +44,27 @@ module.exports = (env, argv) => {
                 },
 
                 {
-                    test: /\.css$/,
-
+                    test: /\.module\.css$/,
                     use: [
                         isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                modules: {
+                                    localIdentName: isProduction
+                                        ? '[hash:base64:5]'
+                                        : '[name]__[local]__[hash:base64:5]',
+                                },
+                            },
+                        },
+                    ],
+                },
 
+                {
+                    test: /\.css$/,
+                    exclude: /\.module\.css$/,
+                    use: [
+                        isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
                         'css-loader',
                     ],
                 },
@@ -86,7 +102,9 @@ module.exports = (env, argv) => {
                 systemvars: true,
             }),
 
-            new BundleAnalyzerPlugin(),
+            // new BundleAnalyzerPlugin({
+            //     analyzerMode: 'static',
+            // }),
 
             ...(isProduction
                 ? [
@@ -122,4 +140,3 @@ module.exports = (env, argv) => {
         },
     };
 };
-

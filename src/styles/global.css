@@ -9,8 +9,10 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     text-size-adjust: none;
-    font-family: var(--font-family-mont);
-    font-weight: var(--font-weight-md);
+    color: var(--font-color-tuna);
+    font-family: var(--font-family-dm-serif);
+    font-weight: var(--font-weight-sm);
+    font-style: normal;
 }
 *,
 *:before,
@@ -29,4 +31,16 @@ img {
 
 html {
     font-size: var(--font-size-md);
+    overflow-x: hidden;
+}
+@media (max-width: 768px) {
+    .form {
+        font-size: var(--font-size-md);
+    }
+}
+
+@media (max-width: 468px) {
+    .form {
+        font-size: var(--font-size-sm);
+    }
 }

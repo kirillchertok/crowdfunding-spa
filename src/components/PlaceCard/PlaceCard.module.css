@@ -1,0 +1,47 @@
+.container {
+    width: 100%;
+}
+
+.image__container {
+    width: 100%;
+    height: 40vh;
+    position: relative;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-md);
+    gap: var(--spacing-sm);
+    font-family: var(--font-family-dm-sans);
+}
+
+.info__title {
+    font-size: 1.5rem;
+    color: var(--font-color-attractive-dark-primary);
+    font-weight: var(--font-weight-md);
+}
+.info__address {
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-md);
+    color: var(--font-color-attractive-dark-secondary);
+}
+.info__price {
+    color: var(--font-color-attractive-dark-primary);
+    font-size: 1.1rem;
+}
+.info__area {
+    color: var(--font-color-attractive-dark-primary);
+    font-size: 1.1rem;
+}
+.info__label {
+    color: var(--font-color-attractive-dark-secondary);
+}

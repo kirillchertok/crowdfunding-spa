@@ -1,5 +1,6 @@
 :root {
-    --font-family-mont: 'Mont', sans-serif;
+    --font-family-dm-serif: 'DM Serif Text', serif;
+    --font-family-dm-sans: 'DM Sans', sans-serif;
 
     --font-weight-xs: 300;
     --font-weight-sm: 400;
@@ -17,15 +18,39 @@
     --border-width-md: 3px;
     --border-width-lg: 4px;
 
+    --border-radius-xs: 1px;
     --border-radius-sm: 3px;
     --border-radius-md: 6px;
     --border-radius-lg: 10px;
     --border-radius-circle: 50%;
 
     --spacing-none: 0;
+    --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
+    --spacing-xl: 3rem;
 
     --box-sizing-base: border-box;
+}
+
+:root {
+    --background-color-white: rgba(255, 255, 255, 1);
+    --background-color-darker-white: rgba(245, 245, 245, 1);
+    --background-color-rice-flower: rgba(240, 254, 226, 1);
+    --modal-background-color-charred: rgba(71, 71, 71, 0.5);
+
+    --color-charred: rgba(71, 71, 71, 1);
+    --color-pale-silver: rgba(234, 234, 234, 1);
+    --color-dark-chartreuse: rgba(104, 208, 23, 1);
+
+    --border-color-black: rgba(0, 0, 0, 1);
+    --border-color-chartreuse: rgba(104, 208, 23, 1);
+
+    --font-color-black: rgba(0, 0, 0, 1);
+    --font-color-white: rgba(255, 255, 255, 1);
+    --font-color-attractive-dark-primary: rgba(34, 34, 34, 1);
+    --font-color-attractive-dark-secondary: rgba(34, 34, 34, 0.5);
+    --font-color-tuna: rgba(53, 54, 64, 1);
+    --font-color-error: rgba(255, 0, 0, 1);
 }
