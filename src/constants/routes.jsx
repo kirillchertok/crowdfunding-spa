@@ -15,17 +15,25 @@ export const PATHS = {
 export const PUBLIC_ROUTES = [
     {
         path: PATHS.LOGIN,
-        element: <Login />,
+        Element: Login,
         displayName: 'Login',
     },
 ];
 
 export const PROTECTED_ROUTES = [
-    { path: PATHS.HOME, element: <Home />, displayName: 'Home' },
+    {
+        path: PATHS.HOME,
+        Element: Home,
+        displayName: 'Home',
+    },
     {
         path: PATHS.LOCATIONS,
-        element: <Locations />,
+        Element: Locations,
         displayName: 'Locations',
     },
-    { path: PATHS.SHOP, element: <Shop />, displayName: 'Shop' },
+    {
+        path: PATHS.SHOP,
+        Element: Shop,
+        displayName: 'Shop',
+    },
 ];

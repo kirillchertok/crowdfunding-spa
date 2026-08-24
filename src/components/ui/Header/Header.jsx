@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Nav } from '@/components/ui/Nav/Nav';
 import { BUTTON_OPTIONS, BUTTON_SIZE } from '@/constants/buttonStyle';
-import { burgerIcon, shoppingBarIcon } from '@/constants/icons';
+import { BurgerIcon, ShoppingBarIcon } from '@/constants/icons';
 import { PATHS } from '@/constants/routes';
 import { logout } from '@/redux/slices/userSlice';
 import TokenStorage from '@/utils/tokenStorage';
@@ -42,11 +42,13 @@ export const Header = () => {
             </div>
 
             <div className={styles.actions}>
-                <div className={styles.shopping_cart}>{shoppingBarIcon}</div>
+                <div className={styles.shopping_cart}>
+                    <ShoppingBarIcon />
+                </div>
 
                 <div className={styles.profile}>
                     <img
-                        src={user.image}
+                        src={user?.image}
                         alt='profile'
                         className={styles.profile__picture}
                     />
@@ -68,7 +70,7 @@ export const Header = () => {
                         size={BUTTON_SIZE.SMALL}
                         onClick={handleToggleMenu}
                     >
-                        {burgerIcon}
+                        <BurgerIcon />
                     </Button>
                 </div>
             </div>

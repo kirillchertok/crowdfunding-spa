@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { BUTTON_OPTIONS } from '@/constants/buttonStyle';
 import { FILTERS } from '@/constants/filters';
 import { INPUT_SIZE } from '@/constants/inputStyle';
+import { validateFilters } from '@/utils/validateFilters';
 
 import { Button } from '../ui/Button/Button';
 import { Input } from '../ui/Input/Input';
@@ -10,9 +11,7 @@ import * as styles from './FilterModal.module.css';
 
 export const FilterModal = ({ filters, onApply, onClose }) => {
     const [form, setForm] = useState(filters);
-
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    useEffect(() => setForm(filters), [filters]);
+    const [error, setError] = useState('');
 
     const handleChange = event => {
         const { name, value } = event.target;
@@ -21,10 +20,19 @@ export const FilterModal = ({ filters, onApply, onClose }) => {
             ...prev,
             [name]: value,
         }));
+
+        setError('');
     };
 
     const handleSubmit = event => {
         event.preventDefault();
+
+        const validationError = validateFilters(form);
+
+        if (validationError) {
+            setError(validationError);
+            return;
+        }
 
         onApply(form);
         onClose();
@@ -32,6 +40,7 @@ export const FilterModal = ({ filters, onApply, onClose }) => {
 
     const handleReset = () => {
         setForm(FILTERS);
+        setError('');
     };
     return (
         <form
@@ -117,6 +126,7 @@ export const FilterModal = ({ filters, onApply, onClose }) => {
                     Reset
                 </Button>
             </div>
+            {error && <p className={styles.error}>{error}</p>}
         </form>
     );
 };
