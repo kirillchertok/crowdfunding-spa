@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { BUTTON_OPTIONS } from '@/constants/buttonStyle';
 import { FILTERS } from '@/constants/filters';
