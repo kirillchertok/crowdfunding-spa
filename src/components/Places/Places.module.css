@@ -33,7 +33,7 @@
 }
 
 .pagination {
-    margin-top: var(--spacing-md);
+    margin: var(--spacing-md) 0;
     justify-self: center;
     display: flex;
     flex-direction: row;

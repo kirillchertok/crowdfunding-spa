@@ -69,18 +69,18 @@ const Login = () => {
                     size={INPUT_SIZE.FULL}
                     value={form.username}
                     onChange={handleChange}
-                    placeholder='Username'
+                    placeholder='Enter username'
                     required
                 />
                 <Input
-                    labelValue='password'
+                    labelValue='Password'
                     name='password'
                     type='password'
                     option={INPUT_OPTIONS.FIRST}
                     size={INPUT_SIZE.FULL}
                     value={form.password}
                     onChange={handleChange}
-                    placeholder='Password'
+                    placeholder='Enter password'
                     required
                 />
                 {error && (

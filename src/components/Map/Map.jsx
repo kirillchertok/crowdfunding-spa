@@ -3,12 +3,21 @@ import { MapContainer, TileLayer } from 'react-leaflet';
 
 import { BASE_COORDINATES } from '@/constants/baseCoordinates';
 import { MAP_SIZE } from '@/constants/mapStyles';
+import { isValidCoordinates } from '@/utils/isValidCoordinates';
 
 import { PlaceMarker } from '../PlaceMarker/PlaceMarker';
 import * as styles from './Map.module.css';
-import { UserLocation } from './UserLocation/UserLocaion';
+import { MapCenter } from './MapCenter/MapCenter';
 
 export const Map = ({ size = MAP_SIZE.MEDIUM, places, zoom = 16, scrollWheelZoom = true }) => {
+    const firstValidPlace = places.find(place =>
+        isValidCoordinates(place.latitude, place.longitude)
+    );
+
+    const center = firstValidPlace
+        ? [firstValidPlace.latitude, firstValidPlace.longitude]
+        : BASE_COORDINATES;
+
     return (
         <div className={classNames(styles.container, styles[`container--${size}`])}>
             <MapContainer
@@ -21,11 +30,10 @@ export const Map = ({ size = MAP_SIZE.MEDIUM, places, zoom = 16, scrollWheelZoom
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                 />
-                <UserLocation />
+                <MapCenter center={center} />
                 {places.map(
                     place =>
-                        place.latitude &&
-                        place.longitude && (
+                        isValidCoordinates(place.latitude, place.longitude) && (
                             <PlaceMarker
                                 key={place.id}
                                 place={place}
