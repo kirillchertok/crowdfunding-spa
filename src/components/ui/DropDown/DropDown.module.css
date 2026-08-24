@@ -23,3 +23,9 @@
 .option {
     font-family: var(--font-family-dm-sans);
 }
+
+@media (max-width: 400px) {
+    .label {
+        display: none;
+    }
+}
