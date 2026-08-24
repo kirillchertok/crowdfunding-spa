@@ -55,3 +55,16 @@
     font-size: 1.3rem;
     color: var(--font-color-error);
 }
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        height: auto;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-sm);
+    }
+    .results {
+        height: 400px;
+        width: 100%;
+    }
+}

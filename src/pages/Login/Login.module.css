@@ -9,13 +9,13 @@
 
 .form {
     width: 30%;
-    min-height: 40%;
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     border-radius: var(--border-radius-md);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    gap: var(--spacing-md);
     border: var(--border-color-chartreuse) solid var(--border-width-sm);
 }
 

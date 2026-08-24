@@ -9,6 +9,7 @@
     gap: var(--spacing-sm);
     padding: var(--spacing-sm);
     border-radius: var(--border-radius-lg);
+    height: 3.5rem;
 }
 
 .container--first {
@@ -64,7 +65,7 @@
     width: 100%;
     color: inherit;
     background-color: transparent;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .input:focus {
